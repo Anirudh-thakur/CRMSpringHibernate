@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import trackerApp.entity.Customer;
 import trackerApp.service.CustomerService;
@@ -25,7 +26,7 @@ public class CustomerController {
 	public String listCustomers(Model theModel)
 	{
 		//get Customers from dao
-		List<Customer> theCustomers = customerService.getCustomer();
+		List<Customer> theCustomers = customerService.getCustomers();
 		
 		//add the customers to the model
 		theModel.addAttribute("customers",theCustomers);
@@ -46,5 +47,16 @@ public class CustomerController {
 		customerService.saveCustomer(customer);
 		return "redirect:/customer/list";
 		
+	}
+	@GetMapping("/showFormForUpdate")
+	public String showFormForUpdate(@RequestParam("customerId") int Id, Model theModel)
+	{
+		//get Customer from DB
+		Customer customer = customerService.getCustomer(Id);
+		
+		//Add customer to model 
+		theModel.addAttribute("customer",customer);
+		//Send customer in form
+		return "customer-form";
 	}
 }

@@ -24,20 +24,22 @@
    <div id="container">
      <div id="form" class="table table-striped table-hover">
      <form:form action="saveCustomer" modelAttribute="customer" method="post">
+     <form:hidden path="id"/>
+     
      <table>
      <tr>
         <th><label>First Name:</label></th>
-        <th><form:input path="firstName"/><th>
+        <th><form:input path="firstName" class="form-control"/><th>
      </tr>
-      <tr>
+      <tr class="form-group">
         <th><label>Last Name:</label></th>
-        <th><form:input path="lastName"/><th>
+        <th><form:input path="lastName" class="form-control"/><th>
      </tr>
-      <tr>
+      <tr class="form-group">
         <th><label>Email:</label></th>
-        <th><form:input path="email"/><th>
+        <th><form:input path="email" class="form-control"/><th>
      </tr>
-     <tr>
+     <tr class="form-group">
         <th><label></label></th>
         <th><input type="submit" value="Save" class="btn btn-success"><th>
      </tr>

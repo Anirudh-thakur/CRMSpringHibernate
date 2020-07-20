@@ -17,14 +17,14 @@
 </head>
 <body>
 <div id="wrapper" class="container">
-   <div id="header" class="bg-dark">
+   <div id="header" class="bg-success">
       <h2>CRM - Customer Relationship Manager</h2>
    </div>
    <div id="container">
      <div id="content">
      <!-- Add button -->
      <input type="button" value="Add Customer"
-      onclick="window.location.href='showFormForAdd';return false;" class="btn btn-secondary"/>
+      onclick="window.location.href='showFormForAdd';return false;" class="btn btn-success"/>
        <table class="table table-striped table-hover">
        <thead class="bg-dark">
           <tr class="table-dark">
@@ -36,10 +36,19 @@
         </thead>
         <tbody>
           <c:forEach var="tempCustomer" items="${customers}">
+          <!-- Construct link for update -->
+          <c:url var="updateLink" value="/customer/showFormForUpdate">
+            <c:param name="customerId" value="${tempCustomer.id }"/>
+          </c:url>
           <tr>
              <td>${tempCustomer.firstName}</td>
              <td>${tempCustomer.lastName}</td>
              <td>${tempCustomer.email}</td>
+             <td>
+             <!-- Update Link -->
+             <a href="${updateLink}"><button class="btn btn-warning">Update</button></a>
+             <a href="${pageContext.request.contextPath}/customer/list"><button class="btn btn-danger">Delete</button></a>
+             <td>
           </tr>
           </c:forEach>
           </tbody>

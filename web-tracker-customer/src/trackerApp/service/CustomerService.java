@@ -8,7 +8,9 @@ import trackerApp.entity.Customer;
 @Service
 public interface CustomerService {
 
-	public List<Customer> getCustomer();
+	public List<Customer> getCustomers();
 
 	public void saveCustomer(Customer customer);
+
+	public Customer getCustomer(int id);
 }
