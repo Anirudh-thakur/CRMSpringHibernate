@@ -36,7 +36,6 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	@Transactional
 	public void delete(Customer customer) {
 		
 		customerdao.delete(customer);

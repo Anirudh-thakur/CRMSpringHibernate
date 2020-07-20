@@ -53,7 +53,7 @@
              <td>
              <!-- Update Link -->
              <a href="${updateLink}"><button class="btn btn-warning">Update</button></a>
-             <a href="${deleteLink}" onclick="if(!(confirm('Do you want to delete?'))) return false;"><button class="btn btn-danger">Delete</button></a>
+             <a href="${deleteLink}"><button class="btn btn-danger">Delete</button></a>
              <td>
           </tr>
           </c:forEach>

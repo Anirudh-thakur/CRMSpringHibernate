@@ -64,7 +64,7 @@ public class CustomerController {
 	{
 		//get Customer from DB
 		Customer customer = customerService.getCustomer(Id);
-		customerService.delete(customer);
+		
 
 		//Send customer in form
 		return "redirect:/customer/list";
