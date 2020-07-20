@@ -1,0 +1,5 @@
+package trackerApp.service;
+
+public interface CustomerService {
+
+}

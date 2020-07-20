@@ -1,0 +1,24 @@
+package trackerApp.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import trackerApp.dao.CustomerDAO;
+import trackerApp.entity.Customer;
+@Service
+public class CustomerServiceImpl implements CustomerService {
+
+	@Autowired 
+	private CustomerDAO customerdao;
+	
+	@Override
+	@Transactional
+	public List<Customer> getCustomer() {
+	  return customerdao.getCustomers();
+	}
+
+}
