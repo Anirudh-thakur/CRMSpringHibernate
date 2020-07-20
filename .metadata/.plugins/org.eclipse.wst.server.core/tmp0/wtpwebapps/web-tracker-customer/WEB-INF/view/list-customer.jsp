@@ -22,12 +22,16 @@
    </div>
    <div id="container">
      <div id="content">
+     <!-- Add button -->
+     <input type="button" value="Add Customer"
+      onclick="window.location.href='showFormForAdd';return false;" class="btn btn-secondary"/>
        <table class="table table-striped table-hover">
        <thead class="bg-dark">
           <tr class="table-dark">
              <th>First Name</th>
              <th>Last Name</th>
              <th>Email</th>
+             <th>Action</th>
           </tr>
         </thead>
         <tbody>

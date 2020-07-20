@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+     
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Save Customer</title>
+</head>
+<body>
+<div id="wrapper" class="container">
+   <div id="header" class="bg-dark">
+      <h2>CRM - Customer Relationship Manager</h2>
+   </div>
+   <div id="container">
+     <div id="form">
+     <form:form action="saveCustomer" modelAttribute="customer" method="post">
+     <table>
+     <tr>
+        <th>First Name:</th>
+        <th><form:input path="firtName"/><th>
+     </tr>
+      <tr>
+        <th>Last Name:</th>
+        <th><form:input path="lastName"/><th>
+     </tr>
+      <tr>
+        <th>Email:</th>
+        <th><form:input path="email"/><th>
+     </tr>
+     
+     </table>
+     </form:form>
+     </div>
+     </div>
+     </div>
+</body>
+</html>
